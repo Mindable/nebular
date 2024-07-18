@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.page-component {
+    background: bisque;
+    @apply w-12 md:w-[520px] lg:w-[520px] xl:w-[520px] bg-amber-300 lg:mx-auto md:mx-auto h-screen;
+}

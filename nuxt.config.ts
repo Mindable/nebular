@@ -2,11 +2,12 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss'],
-  postcss: {
-    plugins: {
-      'postcss-color-gray': {},
-    },
+  css: ['@/assets/styles/global.css'],
+  modules: ['@nuxt/ui'],
+  ui: {
+    global: false,
   },
-  tailwindcss: { exposeConfig: true },
+  colorMode: {
+    preference: 'light',
+  },
 })
