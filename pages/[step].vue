@@ -1,11 +1,14 @@
 <script setup lang="ts">
-const route = useRoute()
-const params = route.params
+import Logo from '~/components/reusables/logo.vue'
+
+const data = useStepStore()
 </script>
 
 <template>
   <div class="page-component">
-    {{ params }}
+    <Logo />
+
+    <component :is="data.currentStep?.component" />
   </div>
 </template>
 
