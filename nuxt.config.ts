@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     '@nuxt/fonts',
     '@pinia/nuxt',
+    '@vueuse/nuxt',
   ],
   ui: {
     global: false,

@@ -1,42 +1,63 @@
-import Start from '~/components/steps/Start.vue'
+import StartIndex from '~/components/steps/start/StartIndex.vue'
 import UserCount from '~/components/steps/UserCount.vue'
 import YourProfile from '~/components/steps/YourProfile.vue'
 import YourGoals from '~/components/steps/YourGoals.vue'
 import type { Step } from '~/types/steps'
+import Male from '~/components/steps/start/options/Male.vue'
+import Female from '~/components/steps/start/options/Female.vue'
 
 export const useStepStore = defineStore('step', () => {
-    const steps: Step[] = [
-        {
-          id: 1,
-          name: 'start',
-          component: Start,
-          next: 2,
-        },
-        {
-          id: 2,
-          name: 'user_count',
-          component: UserCount,
-          next: 3,
-        },
-        {
-          id: 3,
-          name: 'your_profile',
-          component: YourProfile,
-          next: 4,
-        },
-        {
-          id: 4,
-          name: 'your_goal',
-          component: YourGoals,
-        },
-      ]
+  const steps: Step[] = [
+    {
+      id: 1,
+      name: 'start',
+      component: StartIndex,
+      options: [Male, Female],
+      next: 2,
+    },
+    {
+      id: 2,
+      name: 'user-count',
+      component: UserCount,
+      next: 3,
+    },
+    {
+      id: 3,
+      name: 'your-profile',
+      component: YourProfile,
+      next: 4,
+    },
+    {
+      id: 4,
+      name: 'your-goal',
+      component: YourGoals,
+    },
+  ]
 
-      const currentStepName = ref(useRoute().params.step || 'start')
-      const currentStep = computed(() => steps.find(s => s.name === currentStepName.value))
+  const currentStepName = ref('start')
+  const currentStep = computed(() => {
+    return steps.find(s => s.name == currentStepName.value)
+  })
 
-      return {
-        steps, 
-        currentStepName, 
-        currentStep,
-      }
+  const updateCurrentStepName = (name: string) => {
+    currentStepName.value = name
+  }
+
+  const goToNextStep = () => {
+    if (currentStep.value) {
+      const currentId = currentStep.value.id
+      const nextId = currentId + 1
+      const nextObj = steps.find(s => s.id === nextId)
+      console.log(nextObj)
+      if (nextObj) navigateTo(`/${nextObj.name}`)
+    }
+  }
+
+  return {
+    steps,
+    currentStepName,
+    currentStep,
+    goToNextStep,
+    updateCurrentStepName,
+  }
 })
