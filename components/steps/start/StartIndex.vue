@@ -1,6 +1,4 @@
-<script setup lang="ts">
-const stepStore = useStepStore()
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="mt-8 h-[90%]">
@@ -32,7 +30,7 @@ const stepStore = useStepStore()
       >
       and <a href="#" class="underline underline-offset-1">Terms of Use.</a>
     </p>
-    <p class="font-[400] text-[11px] text-center text-gray-500 leading-[18px]">
+    <p class="font-[400] text-[12px] text-center text-gray-500 leading-[18px]">
       Obrio Limited, Athalassas, 62, MEZZANINE, Strovolos, 2012, Nicosia, Cyprus
     </p>
   </div>

@@ -4,8 +4,17 @@
 
 :root {
     font-family: "Poppins", sans-serif;
+    @apply text-[16px];
 }
 
 .page-component {
     @apply w-[374px] md:w-[374px] lg:w-[374px] xl:w-[374px] mx-auto h-[705px] pt-5;
+}
+
+.gradient-button {
+    background-image: linear-gradient(165.54deg, rgb(20, 19, 51) -33.39%, rgb(32, 34, 97) 15.89%, rgb(84, 60, 151) 55.84%, rgb(105, 57, 162) 74.96%);
+    z-index: 2;
+    text-decoration: none;
+    outline: none;
+    @apply py-1 px-2 mx-auto mt-auto mb-0 h-12 text-lg leading-5 text-center normal-case align-middle rounded-xl opacity-100 cursor-pointer select-none lg:mx-auto lg:mt-auto lg:mb-12 lg:h-12 text-slate-50;
 }
