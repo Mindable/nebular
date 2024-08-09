@@ -25,7 +25,7 @@ const currentGroupFromSteps = computed(
         }"
       >
         <span
-          class="flex items-center justify-center w-5 h-5 bg-blue-100 rounded-full lg:h-12 lg:w-12 dark:bg-blue-800 shrink-0"
+          class="flex items-center justify-center w-5 h-5 bg-blue-100 rounded-full lg:h-5 lg:w-5 dark:bg-blue-800 shrink-0"
           :class="{
             '!dark:bg-gray-700 !bg-gray-100': currentGroupFromSteps !== number,
           }"
